@@ -161,8 +161,7 @@ namespace Banking
             {
                 int index = CardsDataGrid.CurrentCell.RowIndex;   // № по порядку в таблице представления
                 int ID = (int)CardsDataGrid[0, index].Value;
-                StatementForm stForm = new StatementForm();
-                stForm.cardID = ID;
+                StatementForm stForm = new StatementForm { cardID = ID, client = clientId };
                 stForm.CardNameLabel.Text = Convert.ToString(CardsDataGrid[1, index].Value);
                 stForm.ClientNameLabel.Text = clientName;
                 stForm.ShowDialog();
